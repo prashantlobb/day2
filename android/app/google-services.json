@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "60228692458",
+    "project_id": "lobbapp",
+    "storage_bucket": "lobbapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60228692458:android:9bb9e160229d8a5563aa93",
+        "android_client_info": {
+          "package_name": "com.remoteconfigapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHuaRt4tywc49RqbICXZmGXCUZoBGH508"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
