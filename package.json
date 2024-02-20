@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@react-native-firebase/app": "^18.8.0",
+    "@react-native-firebase/app-distribution": "^18.8.0",
+    "@react-native-firebase/crashlytics": "^18.8.0",
     "@react-native-firebase/remote-config": "^18.8.0",
     "react": "18.2.0",
     "react-native": "0.73.4"
