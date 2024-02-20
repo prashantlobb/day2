@@ -80,6 +80,7 @@ android {
     namespace "com.remoteconfigapp"
     defaultConfig {
         applicationId "com.remoteconfigapp"
+        applicationIdSuffix ".beta"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
