@@ -1,24 +1,39 @@
-import { View, Text } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import remoteConfig from '@react-native-firebase/remote-config';
+import React, {useEffect} from 'react';
+import {View, Text} from 'react-native';
+import usePushNotification from './app/hooks/usePushNotification';
 
 const App = () => {
-  const [remoteData,setRemoteData] = useState('Remote Config')
-  useEffect(() => {
-    remoteConfig()
-      .setDefaults({
-        is_tested: false,
-      })
-      .then(() => remoteConfig().fetchAndActivate())
-      .then(() => {});
-      const isTested = remoteConfig().getValue('is_tested');
-      setRemoteData(isTested?'Remote Config tested successfully':'Yet to test')
-  }, []);
-  return (
-    <View style={{flex:1,alignItems:'center',justifyContent:'center',backgroundColor:'green'}}>
-      <Text style={{color:'#000',fontWeight:'800'}}>Remote Config Test: {remoteData}</Text>
-    </View>
-  )
-}
+  const {
+    requestUserPermission,
+    getFCMToken,
+    listenToBackgroundNotifications,
+    listenToForegroundNotifications,
+    onNotificationOpenedAppFromBackground,
+    onNotificationOpenedAppFromQuit,
+  } = usePushNotification();
 
-export default App
+  useEffect(() => {
+    const listenToNotifications = () => {
+      try {
+        getFCMToken();
+        requestUserPermission();
+        onNotificationOpenedAppFromQuit();
+        listenToBackgroundNotifications();
+        listenToForegroundNotifications();
+        onNotificationOpenedAppFromBackground();
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    listenToNotifications();
+  }, []);
+
+  return (
+    <View>
+      <Text>Push Notification APP</Text>
+    </View>
+  );
+};
+
+export default App;
