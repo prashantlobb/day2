@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-firebase/app": "^18.8.0",
     "@react-native-firebase/remote-config": "^18.8.0",
+    "lottie-react-native": "^6.6.0",
     "react": "18.2.0",
     "react-native": "0.73.4"
   },
